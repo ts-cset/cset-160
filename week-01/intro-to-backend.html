@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 01: Intro to Back-End Programming</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[01]
+
+# Intro to Back-End Programming
+
+---
+
+# Agenda
+
+1. [ ] Client-Server Model
+2. [ ] Overview of Languages
+3. [ ] Stupid Tourism
+4. [ ] Why Python?
+5. [ ] Start Scripting!
+
+---
+
+# Client-Server Model
+
+"Application structure that distributes work between service or resource providers, .eight[servers], and requesters or consumers, called .eight[clients]."
+
+---
+class: center
+
+<img alt="network diagram of client-server model" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1024px-Client-server-model.svg.png" width="80%" />
+
+---
+
+# Waiter-Chef Metaphor
+
+- You are the end user.
+- The waiter takes your order and requests it from the chef.
+- The chef prepares your order.
+- And the waiter delivers it.
+
+---
+
+# Interesting Notes
+
+- You or the waiter don't need to know how to make the food.
+- The waiter and chef need to speak the same language.
+- There can be many waiters for one chef.
+- You never interact with the chef.
+- Both the waiter and the chef need similar ideas about how things can go wrong.
+
+---
+
+## Many Levels of .eight[Client]-.fourteen[Server]
+
+1. You use a .eight[web browser] to log in to your online banking service.
+2. The .eight[web browser] sends the credentials as a request to the .fourteen[web server] to be processed by the back-end application.
+3. The .eight[application] checks those credentials by sending a request to the .fourteen[database server].
+4. If the credentials are good, the .fourteen[aplication] responds with the requested resource.
+5. The .eight[web browser] displays it.
+
+---
+
+# Common Servers
+
+- Web (Apache, Nginx)
+- Email
+- Network Printing
+
+---
+class: middle, center
+
+# .fourteen[Does your portfolio site follow the client-server model?]
+
+---
+
+# Overview of Programming Languages
+
+- Specification vs. Implementation
+- Compiled vs. Interpreted (vs. Transpiled)
+- Low-level vs. High-level
+- Domain Specific vs. General Purpose
+
+---
+class: middle, center
+
+# .fourteen[Isn't this a Web Dev class?]
+
+---
+
+# Domain vs. General Purpose
+
+- .eight[Front-End Web]: JavaScript
+- .eight[Back-End Web]: JavaScript, PHP, Java, Ruby, Python
+- .eight[Mobile Apps]: Objective-C, Swift, Java, C#
+- .eight[Game Dev]: C++, C#
+- .eight[Desktop Apps]: Java, C++, C#, Python
+- .eight[Systems]: C, Rust, Go, Python
+- .eight[Math/Stats]: R, Julia, Python
+- .eight[AI]: Lisp, Java, Python
+
+---
+class: middle, center
+
+# .eleven[Stupid Tourism]
+
+---
+class: middle
+
+# Why Python?
+
+- Interpreted, High-Level, General Purpose
+- Emphasizes Readability
+- Dynamic Types and Memory Management
+- Supports Multiple Paradigms
+
+---
+
+# The Zen of Python
+
+- Beautiful is better than ugly
+- Explicit is better than implicit
+- Simple is better than complex
+- Complex is better than complicated
+- Readability counts
+
+[read more here](https://en.wikipedia.org/wiki/Zen_of_Python)
+
+---
+
+# Install Python3
+
+```sh
+$ brew install python3
+$ python3 --version
+```
+
+# .eleven[python3 != python]
+
+---
+
+# Why Python 3?
+
+- 3.0 was created 11 years ago
+- Not backwards compatible...
+- 2.7's end-of-life ~was 2015~ is 2020
+
+---
+
+# Start Scripting!
+
+```sh
+$ python3
+Python 3.6.5 ...
+>>> quit()
+$
+```
+
+---
+
+# Start Scripting!
+
+- Make a new directory for our Python exercises
+- Move into it
+- Make a new file called .eight[ex01.py]
+- Use whatever editor you want
+- Make a new file for each of our exercises
+
+---
+
+# Exercise 01
+
+```python
+print("Hello World!")
+print("I like printing things.")
+print("This is fun!")
+print('I just said "This is fun!"')
+print("Don't you agree?")
+```
+
+---
+
+# Exercise 01
+
+```sh
+$ python3 ex01.py
+```
+
+- Add another print statement. Can you print a number?
+- Put a .eight[#] before one of the lines. What did it do?
+
+---
+
+# Exercise 01
+
+- Strings are in double or single quotes: .eight[""] .eight['']
+- Comments start with octothorpes: .eight[#]
+
+```python
+# Comments can be whole lines
+print("or...")  # at the end of lines
+```
+
+---
+
+# Exercise 02
+
+```python
+# Math!
+
+print(25 + 30 / 6)
+print(100 - 25 * 3 % 4)
+
+print(3 + 2 + 1 - 5 + 4 % 2 - 1 / 4 + 6)
+
+print("True or False?", 3 < 7)
+print("Greater than or equal to?", 3 >= 7)
+```
+
+---
+
+# Exercise 02
+
+Mathematical operators: 
+```python
++ - / * %
+```
+Comparison operators:
+```python
+< > <= =>
+```
+
+---
+
+# Exercise 02
+
+.eight[2] is an integer, .eight[2.0] is a floating point number. Rewrite using .eight[floating point] numbers.
+
+Now rewrite the file line by line using the REPL.
+```
+$ python3
+>>> 2 + 3
+5
+```
+
+---
+
+# Exercise 03
+
+```python
+cars = 100
+space_in_a_car = 4.0
+drivers = 30
+passengers = 90
+cars_not_driven = cars - drivers
+cars_driven = drivers
+carpool_capacity = cars_driven * space_in_a_car
+average_passengers_per_car = passengers / cars_driven
+
+print("There will be ", cars_not_driven, " empty cars")
+print("We can transport ", carpool_capacity, " people today.")
+print("We need to put about ", average_passengers_per_car, " in each car")
+```
+
+---
+
+# Exercise 03
+
+- Don't need a keyword to make a variable
+- By convention, names use snake_case
+- Print can handle multiple arguments
+- By convention, put a space between operators
+
+---
+
+# Exercise 03
+
+- Line 2 has a floating point number. Is it necessary?
+- Try changing it.
+ 
+---
+
+# Exercise 04
+
+```python
+name = 'Zed Shaw'
+age = 35
+height = 74 # inches
+weight = 180 # lbs
+eye_color = 'blue'
+hair_color = 'brown'
+
+print(f"Let's talk about {name}")
+print(f"He's {height} inches tall")
+print(f"He's {weight} pounds heavy")
+print(f"He's got {eye_color} eyes and {hair_color} hair")
+```
+
+---
+
+# Exercise 04 (cont.)
+
+```python
+total = age + height + weight
+print(f"If I add {age}, {height}, and {weight} I get {total}.")
+```
+
+---
+
+# Exercise 04
+
+These are called .eight[Format Strings]. You're telling python to format the string before you print it.
+
+- Write some variables that convert the numbers to metric.
+- Try to find some variable names that aren't allowed
+
+---
+
+# Exercise 05
+
+```python
+types_of_people = 10
+x = f"There are {types_of_people} types of people."
+
+binary = "binary"
+do_not = "don't"
+y = f"Those who know {binary} and those who {do_not}"
+
+print(x)
+print(y)
+
+print(f"I said: {x}")
+print(f"I also said: {y}")
+```
+
+---
+
+# Exercise 05 (cont.)
+
+```python
+hilarious = False
+joke_evaluation = "Isn't that joke funny? {}" 
+
+print(joke_evaluation.format(hilarious))
+
+w = "This is the left side of..."
+e = "a string with a right side."
+
+print(w + e)
+```
+
+---
+
+# Exercise 05
+
+- .eight[.format()] is the other way to format strings
+- .eight[f] is helpful for strings you're creating
+- .eight[.format()] is helpful for strings that already exist
+
+---
+
+# Exercise 05
+
+1. Switch computers with a friend.
+2. Find a small way to break their code.
+3. Switch them back.
+4. Try to fix your code.
+
+---
+
+# Exercise 06
+
+```python
+print("Mary had a little lamb,")
+print("Its fleece was white as {},".format('snow'))
+print("And everywhere that Mary went,")
+print("." * 10) # what???
+
+a = 'C'
+b = 'h'
+c = 'e'
+d = 'e'
+e = 's'
+f = 'e'
+g = 'b'
+h = 'u'
+i = 'r'
+j = 'g'
+k = 'e'
+l = 'r'
+
+print(a + b + c + d + e + f, end=' ')
+print(g + h + i + j + k + l)
+```
+
+---
+
+# Exercise 06
+
+- Try keeping a list of all the mistakes you make.
+- Before starting a new exercise, look over the list and try not to make the same mistakes against.
+- Also, try adding a comment above every line describing what it does.
+
+Now, let's swap computers with someone else and break things again!!!
+
+---
+
+# Exercise 07
+
+```python
+formatter = "{} {} {} {}"
+
+print(formatter.format(1, 2, 3, 4))
+print(formatter.format('one', 'two', 'three', 'four'))
+print(formatter.format(True, False, False, True))
+print(formatter.format(formatter, formatter, formatter, formatter))
+print(formatter.format(
+  "Try your",
+  "Own text here",
+  "Maybe a poem",
+  "Or song lyrics"
+))
+```
+
+---
+
+# Exercise 07
+
+Someone explain what's happening here?
+
+---
+
+# Exercise 08
+
+```python
+days = "Mon Tue Wed Thu Fri Sat Sun"
+months = "Jan\nFeb\nMar\nApr\nMay\nJune\nJuly"
+
+print("Here are the days: ", days)
+print("Here are the months: ", months)
+
+print("""
+There's something going on here.
+With the three double-quotes.
+We'll be able to type as much as we like.
+""")
+```
+
+---
+
+# Exercise 08
+
+- Look up a list of Python's escape sequences.
+- Try to print them!
+
+---
+
+# Exercise 09
+
+```python
+tabby_cat = "\tI'm tabbed in."
+persian_cat = "I'm split\non two lines."
+backslash_cat = "I'm \\ a \\ cat."
+
+fat_cat = """
+I'll do a list:
+\t* cat food
+\t* fishies
+\t* catnip\n\t* grass
+"""
+
+print(tabby_cat)
+print(persian_cat)
+print(backslash_cat)
+print(fat_cat)
+```
+
+---
+class: middle, center
+
+# The End!
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
