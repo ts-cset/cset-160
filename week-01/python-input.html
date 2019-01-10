@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 02: Python Input</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[02]
+
+# Python Input
+
+---
+
+# Agenda
+
+1. [ ] Review Yesterday's Exercises
+2. [ ] User Input
+3. [ ] Script Arguments
+4. [ ] Handling Files
+
+---
+
+# Review
+
+- Printing
+- Assign Variables
+- Data Types
+- Simple Math and Comparison
+- String Formatting
+
+---
+class: middle, center
+
+# Python Documentation
+
+## [https://docs.python.org/3/](https://docs.python.org/3/)
+
+---
+class: middle, center
+
+# Searching
+
+## .fourteen[python3 THING]
+
+---
+
+# [Exercise 10](https://github.com/ts-cset/cset-160/blob/master/python/ex10.py)
+
+- Use the python documentation to find out what .eight[input()] does.
+- Try writing another "form" like this. Can you ask for numbers and do math with them?
+- If you read about .eight[input()], you might have seen that it can take an argument. Rewrite this exercise to only use three .eight[input]s and a final .eight[print] statement at the end.
+
+---
+
+# Exercise 10
+
+In your terminal, run this command:
+```sh
+$ pydoc input
+```
+You can get out of pydoc by typing .eight[q]. Try using pydoc for otherthings we've seen so far. Or, if you're feeling brave, try looking up .eight[open], .eight[file], .eight[os], or .eight[sys].  
+
+---
+
+# [Exercise 11](https://github.com/ts-cset/cset-160/blob/master/python/ex11.py)
+
+- Don't run this yet.
+- On line 3, we're .eight[importing] a .eight[module].
+- On line 5, we're *unpacking* a variable into many variables. It's called .eight[multiple assignment].
+
+
+---
+
+# Exercise 11
+
+So far, we've been calling scripts like this:
+```sh
+$ python3 script.py
+```
+Where .eight[script.py] is an argument for the .eight[python3] command. Now, let's call our new script with arguments of its own:
+```sh
+$ python3 ex11.py one two three
+```
+
+---
+
+# Exercise 11
+
+- Now that you know what this script is doing, rename your variables so they make sense.
+- Try calling this script with your own arguments.
+- What happens if you use too many? Or not enough?
+- Think about why you would use arguments over inputs.
+
+### Anytime you see .eleven[argv], make sure you're calling the script properly!
+
+---
+
+# [Exercise 12](https://github.com/ts-cset/cset-160/blob/master/python/ex12.py)
+
+- Don't forget to run this script with the right arguments.
+- Look up the games *Zork* and *Adventure* and play them sometime.
+- Try to change the prompt.
+- Add another argument into this script.
+
+---
+
+# [Exercise 13](https://github.com/ts-cset/cset-160/blob/master/python/ex13.py)
+
+This exercise needs another file. Call it .eight[ex13_sample.txt] here is its contents:
+
+```md
+This is stuff I typed into a file.
+It is really cool stuff.
+Lots and lots of stuff in here...
+```
+
+---
+
+# Exercise 13
+
+- .eleven[Working with files is an easy way to **erase your work** if you aren't careful]
+- We don't want to *hard code* the filename, so we use .eight[argv] or .eight[input].
+- Write comments above each line to figure out what is happening in this file.
+- Try only using .eight[input] to run this script. What are the benefits to using one or the other?
+- Try using .eight[open()] and .eight[read()] from the Python REPL. Does it work the same way?
+
+---
+
+# Exercise 13
+
+## .eleven[Important Note!]
+
+Python is interacting with the filesystem and treating these files as *external* resources. It can't guarantee that the filesystem closed what it opened, so you should do it **explicitly**.
+
+Add this to the end of your script:
+```python
+txt.close()
+txt_again.close()
+```
+
+---
+
+# [Exercise 14](https://github.com/ts-cset/cset-160/blob/master/python/ex14.py)
+
+- Let's make a basic file editor!
+- Try running this script using a filename that doesn't exist. Does it break?
+- There's too much repetition here. Rewrite the script to use a single .eight[target.write()] command instead of six.
+- Figure out why we had to pass a .eight['w'] to open the file.
+
+---
+
+# Exercise 14
+
+You should know the following file functions:
+
+- .eight[close]
+- .eight[read]
+- .eight[readline]
+- .eight[truncate]
+- .eight[write]
+- .eight[seek(0)]
+
+Also, look up all the file modes you can pass to .eight[open].
+
+---
+
+# [Exercise 15](https://github.com/ts-cset/cset-160/blob/master/python/ex15.py)
+
+- We're importing a new module, .eight[exists()], to get a Boolean value by checking the existence of a file.
+- This script is kind of annoying. Try to remove some features to make it simpler.
+- See how short you can make this file. Can you get it to one line?
+
+---
+
+# More Practice
+
+- If you can make a copy script, can you make a move script?
+- What other file-related scripts can you make?
+- Can you use the same file functions in the REPL?
+
+---
+
+The End!
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
