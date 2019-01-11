@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 03: Python Functions</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[03]
+
+# Python Functions
+
+---
+
+# Agenda
+
+1. [ ] Review Yesterday's Exercises
+2. [ ] Making Functions
+3. [ ] Calling Functions
+4. [ ] More About Files
+5. [ ] Returning Values
+
+---
+
+#  Hurray, Functions!
+
+- Python functions:
+  - name pieces of code just like variables name values
+  - take arguments, just like argv
+  - are mini-scripts within scripts!
+
+---
+
+# [Exercise 16](https://github.com/ts-cset/cset-160/blob/master/python/ex16.py)
+
+- use the keyword .eight[def] to define a function
+- .eight[*args] (asterisk args) is like .eight[argv] for functions
+- end the function definition with a semicolon, .eight[:]
+- .eleven[the function body MUST be indented!]
+
+---
+
+# Function Checklist:
+
+- Does it start with .eight[def]?
+- Is the name only characters and underscores?
+- Did you put an open paren right after the name?
+- Are you arguments, if any, separated by a comma and space?
+
+---
+
+# Function Checklist: (cont.)
+
+- Are all of your arguments unique?
+- Did you close the parenthesis and end with a semicolon?
+- Did you indent the body of your function?
+- Did you "end" your function by returning to the original indent level?
+
+---
+
+# Function Checklist: (cont.)
+
+- Did you call/run your function by typing its name?
+- Did you put an open paren after the name?
+- Did you put the right values inside the parens, separated by commas?
+- Did you close the parentheses?
+
+--- 
+
+# [Exercise 17](https://github.com/ts-cset/cset-160/blob/master/python/ex17.py)
+
+You might be noticing that .eight[scope] for variables is similar to 
+JavaScript. Try to see if there are any differences.
+
+---
+
+# Exercise 17
+
+- If you don't understand what's happening, try writing a simple comment above every line.
+- Write a few more functions on your own for practice.
+- Then try calling each of them a couple different times.
+
+--- 
+
+# [Exercise 18](https://github.com/ts-cset/cset-160/blob/master/python/ex18.py)
+
+- Trace how .eight[current_line] is changing throughout the file and how it becomes .eight[line_count].
+- Run this in your terminal and try to understand what it's doing in the script:
+```sh
+$ pydoc file.seek
+```
+- Rewrite the script using the shorthand addition .eight[+=]. It should look familiar.
+
+--- 
+
+# [Exercise 19](https://github.com/ts-cset/cset-160/blob/master/python/ex19.py)
+
+- What is the difference between .eight[print] and .eight[return]?
+- Write a few more functions using .eight[return] to understand it.
+- Returned values can be used in other functions. Write another chain of functions like the one at the end of the file.
+
+---
+
+# More Practice
+
+Try using .eight[int(input())] and .eight[float(input())] to make a script with functions that use math with values entered by the user.
+
+---
+
+The End!
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
