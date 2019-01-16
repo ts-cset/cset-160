@@ -16,14 +16,14 @@ if door == "1":
     if bear == "1":
         print("The bear eats your face off. Good job!")
     elif bear == "2":
-        print("The eats your legs off. Good job!")
+        print("The bear eats your legs off. Good job!")
     else:
         print(f"Well, {bear} was probably better.")
         print("Bear runs away.")
 
 elif door == "2":
     print("You stare into the endless abyss at Cthulu's retina.")
-    print("1. Bluleberries")
+    print("1. Blueberries")
     print("2. Yellow jacket clothespins")
     print("3. Understanding revolvers yelling melodies")
 
