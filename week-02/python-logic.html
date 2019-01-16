@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 04: Python Logic</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[04]
+
+# Python Logic
+
+---
+
+# Agenda
+
+1. [ ] Review Functions HW
+2. [ ] Warmups
+3. [ ] What Do We Know?
+4. [ ] Logic
+5. [ ] Conditionals
+6. [ ]
+
+---
+
+# [Exercise 20](https://github.com/ts-cset/cset-160/blob/master/python/ex20.py)
+
+This one is simple, just write it and run it. You should understand everything it's doing.
+
+---
+
+# [Exercise 21](https://github.com/ts-cset/cset-160/blob/master/python/ex21.py)
+
+This one isn't as simple. You'll write it, but you won't run it. You'll *import* it into the REPL and run the functions yourself.
+
+(Although, you might still want to run this file to make sure you typed it correctly.)
+
+Open the REPL on your Terminal with:
+```sh
+$ python3
+&gt;&gt;&gt;
+```
+
+---
+
+# Exercise 21
+
+Open the REPL and enter these lines, one at a time:
+
+```python
+&gt;&gt;&gt; import ex21
+&gt;&gt;&gt; sentence = "All good things come to those who wait."
+&gt;&gt;&gt; words = ex21.break_words(sentence)
+&gt;&gt;&gt; words
+&gt;&gt;&gt; sorted_words = ex21.sort_words(words)
+&gt;&gt;&gt; sorted_words
+```
+There's more, keep going on the next slide...
+
+---
+
+# Exercise 21
+
+```python
+&gt;&gt;&gt; ex21.print_first_word(words)
+&gt;&gt;&gt; ex21.print_last_word(words)
+&gt;&gt;&gt; words
+&gt;&gt;&gt; ex21.print_first_word(sorted_words)
+&gt;&gt;&gt; ex21.print_last_word(sorted_words)
+&gt;&gt;&gt; sorted_words
+&gt;&gt;&gt; sorted_words = sort_sentence(sentence)
+&gt;&gt;&gt; sorted_words
+&gt;&gt;&gt; ex21.print_first_and_last(sentence)
+&gt;&gt;&gt; ex21.print_first_and_last_sorted(sentence)
+```
+
+---
+
+# Exercise 21
+
+- Did you get the output you expected?
+- Try typing .eight[help(ex21)] and .eight[help(ex21.break_words)] in the REPL. Does that help explain those odd triple quoted strings? These are called *documentation comments*.
+- Close the REPL and try it again, this time typing .eight[from ex21 import *]. The asterisk means "import everything" from the module. How does this change how we call the functions?
+
+---
+
+# [Exercise 22](https://github.com/ts-cset/cset-160/blob/master/python/ex22.py)
+
+This last warmup is a little different. This is the *one* time you get to copy/paste code. Exercise 22 is broken. Copy the file and try to fix it.
+
+---
+class: middle, center
+
+# .eight[What do we know so far?]
+
+---
+
+# Logical Terms
+
+- true / false
+- and
+- or
+- not
+- equal / not equal
+- greater / less than
+- greater / less than or equal to
+
+---
+
+# Truth Tables
+
+An easy way to understand logic with simple memorization.
+
+The simplest is with .eight[not].
+
+```md
+| NOT       | RESULT |
+| ---       | ---    |
+| not False | True   |
+| not True  | False  |
+```
+
+---
+
+# Truth Tables
+
+```md
+| OR             | RESULT |
+| ---            | ---    |
+| True or True   | True   |
+| True or False  | True   |
+| False or True  | True   |
+| False or False | False  |
+```
+
+---
+
+# Truth Tables
+
+```md
+| AND             | RESULT |
+| ---             | ---    |
+| True and True   | True   |
+| True and False  | False  |
+| False and True  | False  |
+| False and False | False  |
+```
+
+---
+
+# Truth Tables
+
+```md
+| NOT OR               | RESULT |
+| ---                  | ---    |
+| not (True or True)   | False  |
+| not (True or False)  | False  |
+| not (False or True)  | False  |
+| not (False or False) | True   |
+```
+
+---
+
+# Truth Tables
+
+```md
+| NOT AND               | RESULT |
+| ---                   | ---    |
+| not (True and True)   | False  |
+| not (True and False)  | True   |
+| not (False and True)  | True   |
+| not (False and False) | True   |
+```
+
+---
+
+# [Exercise 23](https://github.com/ts-cset/cset-160/blob/master/python/ex23.txt)
+
+This is just a text file, not a python script, so you don't have to write it down and run it.
+
+Instead, try to figure out the Boolean result from each expression. Write them down somewhere.
+
+Then open up the Python REPL and evaluate each line. Can you get them all right?
+
+---
+
+# [Exercise 24](https://github.com/ts-cset/cset-160/blob/master/python/ex24.py)
+
+Conditionals!
+
+- This should be very familiar.
+- What happens if the code block under an if-statement is not indented?
+- Play around with the variables and conditions and try to get other lines to print.
+
+---
+
+# [Exercise 25](https://github.com/ts-cset/cset-160/blob/master/python/ex25.py)
+
+- Conditionals use the same colon and indent syntax as functions
+- Try to add some more complex Boolean expressions, like using .eight[and] or .eight[or].
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
