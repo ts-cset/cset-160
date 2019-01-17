@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 05: Python Loops</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[04]
+
+# Python Loops
+
+---
+
+# Agenda
+
+1. [ ] Lists
+2. [ ] For-Loops
+3. [ ] While-Loops
+4. [ ] Loop Practice
+5. [ ] Lab
+
+---
+
+# [Exercise 27](https://github.com/ts-cset/cset-160/blob/master/python/ex27.py)
+
+- Lists! Our first data structure!
+- Python Lists are very similar to JavaScript Arrays.
+- Python has other data structures, too. We'll get to them later.
+- If you're curious, look up the classical Computer Science definitions of Lists and Arrays on Wikipedia.
+    - Is there a difference?
+    - Why do Python and JS use different names?
+
+---
+
+# Exercise 27
+
+- Look up the .eight[range] function and learn what it does.
+- Could we remove the for-loop on line 23 and just assign .eight[range(0,6)] to .eight[elements]?
+- What other List methods can you use beside .eight[append()]?
+
+---
+
+# [Exercise 28](https://github.com/ts-cset/cset-160/blob/master/python/ex28.py)
+
+- Now we've seen both types of loops in Python.
+- They're used the same as in JavaScript, so they should feel familiar.
+- Is it usually better to use while-loops or for-loops?
+
+.eleven[You can always stop your script from running by hitting CTRL-C]
+
+---
+
+# Exercise 28
+
+- Convert the while-loop to a function you can call and replace .eight[6] with a variable so this script can append whatever numbers you call it with.
+- Now add a second argument to the function that changes how every iteration increments on line 12.
+- Finally, replace the while-loop with a for-loop and range. Do you need the line that increments .eight[i]?
+
+---
+
+# Accessing Items From Lists
+
+Do you remember the difference between .eight[ordinal] and .eight[cardinal] numbers?
+
+```python
+my_list[0]
+```
+
+Just like JavaScript, you need to use an integer as the index.
+
+---
+
+# Accessing Methods
+
+```python
+my_list.append('hello')
+```
+
+1. Python sees .eight[my_list], where did it come from?
+2. Oh, it's a List. Lists have properties so the .eight[.] is okay.
+3. Is .eight[append] in that group of properties? Yes, grab the value.
+4. After append is a pair of parens. Is append a function? Yes, so call it.
+
+---
+class: middle, center
+
+# .fourteen[Append was called with how many arguments?]
+
+---
+
+# Accessing Methods
+
+Two. Think of it like this:
+
+```python
+append(my_list, 'hello')
+```
+
+.eight[my_list passes itself to it's methods]
+
+---
+
+# Try It
+
+Open the REPL and type this:
+
+```python
+&gt;&gt;&gt; class Thing(object):
+...     def test(message):
+...             print(message)
+...
+&gt;&gt;&gt; a = Thing()
+&gt;&gt;&gt; a.test("hello")
+```
+
+---
+
+# Accessing Methods
+
+Remember this when you run into the following error:
+
+```python
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: test() takes 1 positional argument but 2 were given
+```
+
+---
+
+# [Exercise 29](https://github.com/ts-cset/cset-160/blob/master/python/ex29.py)
+
+- We can access items a little differently from JS
+- Figure out what .eight[split] and .eight[join] do.
+- The odd looking .eight[3:5] notation is a "slice" from a list. Look it up.
+- Rewrite this script using a for-loop. Which is easier? Which is simpler?
+
+---
+
+# More Practice With Loops
+
+Let's recreate some of our JS functions into Python
+
+1. [Looping A Triangle](https://eloquentjavascript.net/02_program_structure.html#i_umoXp9u0e7)
+2. [FizzBuzz](https://eloquentjavascript.net/02_program_structure.html#i_rebKE3gdjV)
+3. [Chessboard](https://eloquentjavascript.net/02_program_structure.html#i_swb9JBtSQQ)
+4. [Minimum](https://eloquentjavascript.net/03_functions.html#i_XTmO7z7MPq)
+5. [Recursion](https://eloquentjavascript.net/03_functions.html#i_jxl1p970Fy)
+6. [Bean Counting](https://eloquentjavascript.net/03_functions.html#i_3rsiDgC2do)
+
+---
+
+# [Exercise 30](https://github.com/ts-cset/cset-160/blob/master/python/ex30.py)
+
+- Let's add loops and functions to our game script
+- On line 11, it says .eight[if "0" in choice], what does that do?
+- This isn't the best way to look for number input. Change it to make it better.
+- Look up what .eight[exit], .eight[break], and .eight[continue] do.
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
