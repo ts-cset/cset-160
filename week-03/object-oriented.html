@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 06: Object Oriented Programming</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[06]
+
+# Object Oriented Programming
+
+---
+class: middle, center
+
+# .eleven[Rule #1: Don't think about JavaScript Objects.]
+
+---
+
+# Agenda
+
+1. [ ] [Dictionaries](#dicts)
+2. [ ] [Modules](#modules)
+3. [ ] [Classes](#classes)
+
+---
+name: dicts
+
+# Dictionaries
+
+- Lists use integers as indexes
+- Dicts use anything as indexes
+
+```python
+my_list = ['a', 'b', 'c', 'd']
+print(my_list[1])
+# 'b'
+
+my_dict = { 'name': 'Zach', 'age': 29 }
+print(my_dict['name'])
+# 'Zach'
+```
+
+---
+
+# Dictionaries
+
+.eleven[Stop thinking about JavaScript Objects.]
+
+```python
+&gt;&gt;&gt; my_dict.name
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+  AttributeError: 'dict' object has no attribute 'name'
+```
+
+---
+
+# Dictionaries
+
+- Key: Value pairs
+- Keys can be many types, stick to strings and numbers
+- Keys must be unique
+- Dicts are not ordered like Lists are
+
+Terms in other languages: hash, map, associative array
+
+---
+
+# Dictionaries
+
+Change value by key, just like Lists
+
+```python
+my_list = ['a', 'b', 'c', 'd']
+my_list[1] = 'z'
+print(my_list)
+# ['a', 'z', 'c', 'd']
+
+my_dict = { 'name': 'Zach', 'age': 29 }
+my_dict['name'] = 'z'
+print(my_dict)
+# { 'name': 'z', 'age': 29 }
+```
+
+---
+
+Add new key: value pairs:
+
+```python
+my_dict['new'] = 'thing'
+print(my_dict)
+# { 'name': 'z', 'age': 29, 'new': 'thing' }
+```
+
+Can remove key: value pairs:
+```python
+del my_dict['new']
+print(my_dict)
+# { 'name': 'z', 'age': 29 }
+```
+
+---
+
+# [Exercise 31](https://github.com/ts-cset/cset-160/blob/master/python/ex31.py)
+
+- Practice *mapping* values and keys
+- Add some mappings for other states and cities
+- Look up documentation on dictionaries. What else can we do with them?
+
+???
+`list(my_dict)`
+`'key' in my_dict`
+loop through dict
+dict comprehension
+
+---
+name: modules
+
+# Modules
+
+A separate file with functions or variables that you can use in other files.
+
+```python
+# mystuff.py
+def apple:
+  print("I AM APPLE!")
+
+# script.py
+import mystuff
+mystuff.apple()
+```
+
+---
+
+# Modules
+
+Kind of like a Dictionary:
+
+```python
+mystuff['apple'] # get apple from dict
+mystuff.apple() # get apple from module
+mystuff.orange # same thing, but just a variable
+```
+
+Common pattern, .eight[Get X from Y], but using a different syntax.
+
+---
+name: classes
+
+# Classes
+
+Another way to store functions and variables in a container:
+
+```python
+class MyStuff(object):
+
+    def __init__(self):
+        self.orange = "Apples aren't oranges."
+
+    def apples(self):
+        print("I AM A CLASSY APPLE!")
+```
+
+---
+
+# Classes
+
+- Looks like a complicated "mini-module"
+- Forget about .eight[__init__] and .eight[self] for now
+- So what's different?
+
+You can use this MyStuff class to make many copies that won't interfere with each other.
+
+Importing a module just gives you one copy to use for the entire program.
+
+---
+
+# Objects
+
+```python
+thing = MyStuff()
+thing.apple()
+print(thing.orange)
+```
+
+We used a class to create, or .eight[instantiate], an object.
+
+---
+
+# Object Instantiation
+
+1. Sees .eight[MyStuff()] and recognizes a class.
+2. Creates an empty object with all the functions in the class.
+3. Uses the special .eight[__init__] function to customize it.
+4. The special variable .eight[self] is this new object.
+5. Assigns the new object to your variable .eight[thing].
+
+---
+class: middle, center
+
+# .eight[Classes are blueprints to create objects]
+
+---
+
+# Get X From Y
+
+We now have three ways:
+```python
+# dict style
+mystuff['apple']
+
+# module style
+import mystuff
+mystuff.apple
+
+# class style
+thing = MyStuff()
+thing.apple
+```
+
+---
+
+# [Exercise 32](https://github.com/ts-cset/cset-160/blob/master/python/ex32.py)
+
+- Use the Song class to instantiate three more song objects.
+- Can you pass the song lyrics to the Class as a variable instead of passing them directly?
+- See if you can make the class do more things.
+- Go find an article explaining Object Oriented Programming. Don't worry if you don't understand all of it, just notice all the jargon.
+
+---
+
+# Speaking Object-Oriented
+
+- OOP is a way of .eight[thinking] about problems.
+- You can't think it if you can't speak it.
+
+.fourteen[Drill these words and phrases into your brain:]
+
+---
+
+# Speaking Object-Oriented
+
+- **class**: blueprint to make a new thing
+- **object**: the most basic thing; an instance of a class
+- **instance**: a single occurence of a class
+- **self**: variable for the instance, used within the instance
+- **method**: a function owned by a class
+- **attribute**: a variable owned by a class
+
+---
+
+# Speaking Object-Oriented
+
+- **inheritance**: concept of one class getting traits from another class, like you from your parents
+- **composition**: concept of one class being built up from other classes as parts, like a car having wheels
+- **is-a**: phrase used to show inheritance, a "koi" **is-a** "fish"
+- **has-a**: phrase used to show composition, a "koi" **has-a** "tail"
+
+---
+
+# Speaking Object-Oriented
+
+**class X(Y)**
+"Make a class named X that is-a Y"
+
+**class X(object): def __init__(self, J)** 
+"Class X has-a __init__ that takes self and J parameters"
+
+**class X(object): def M(self, J)**
+"Class X has-a function named M that takes self and J parameters"
+
+---
+
+# Speaking Object-Oriented
+
+**foo = X()**
+"Set foo to an instance of class X"
+
+**foo.M(J)**
+"From foo, get the M function, and call it with parameters self, J"
+
+**foo.K = Q**
+"From foo, get the K attribute, and set it to Q"
+
+---
+
+# Speaking Object-Oriented
+
+[Download the Script](https://github.com/ts-cset/cset-160/blob/master/python/oop_test.py)
+
+Drill the phrases from code to english:
+```bash
+$ python3 oop_test.py
+```
+
+Drill the phrases from english to code:
+```bash
+$ python3 oop_test.py english
+```
+
+---
+
+# Zen Koan
+
+# .eight[What is the difference between a fish and a koi?]
+
+---
+
+# [Exercise 33](https://github.com/ts-cset/cset-160/blob/master/python/ex33.py)
+
+- Use the "is-a" and "has-a" phrases to replace each "??" comment in the code.
+- What is the difference between .eight[class Name(object)] and .eight[class Name()]? Which should you use?
+- Add some functions and variables to the classes that make them do things. How would some of these classes "inherit" these functions and variables?
+- What does .eight[super()] do?
+  
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
