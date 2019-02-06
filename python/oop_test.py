@@ -78,6 +78,9 @@ try:
             print(question)
 
             response = input("> ")
+
+            answer = " ".join(answer.split("\n\t"))
+
             if response == answer:
                 print("Correct!!\n\n")
             else:
