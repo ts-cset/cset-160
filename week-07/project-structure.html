@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 07: Project Structure</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[07]
+
+# Project Structure
+
+---
+
+# Agenda
+
+1. [ ] [Explore GitHub](#github)
+2. [ ] [Overview](#overview)
+3. [ ] [Generic Files](#generic)
+4. [ ] [Python Files](#python)
+
+---
+name: github
+
+# Explore GitHub
+
+1. Go to [github.com/explore]()
+2. Click on the section labeled .fourteen[Popular Topics]
+3. Scroll through the list to find .fourteen[Python]
+4. These repos are _related_ to Python, but we only want to see repos _written_ in Python, so select it from the .fourteen[Language] dropdown
+5. Then .fourteen[Sort] by .fourteen[Most stars]
+
+---
+
+# Explore GitHub
+
+Look through at least .fourteen[ten] project repos and make a list of common file or directory names. Don't go too deep into directories, just skim through the top level or two.
+
+Once you have your list, do a quick Google search and see if you can find out what the file or directory is for.
+
+Then, pick a different language to explore. See if projects in that language use items from your list, or if they have their own common names.
+
+---
+name: overview
+
+# Overview of a Project
+
+```md
+my-project/
+  - .git/
+  - docs/
+  - my-project/
+    - __init__.py
+    - other modules
+  - test/
+  - venv/
+  - .gitignore
+  - README.md
+  - requirements.txt
+  - setup.py
+```
+
+---
+name: generic
+
+# Generic Project Files
+
+- Repo Information: .eight[README.md], .eight[LICENSE]
+- Version Control: .eight[.git], .eight[.gitignore]
+- Package Manager: .eight[requirements.txt], .eight[package.json]
+  - Dependencies = packages to make the project run
+  - Dev Dependencies = packages to work on the project
+- Environment Info: .eight[venv/], .eight[.editorconfig]
+- Continuous Integration: .eight[.travis.yml], .eight[.circleci]
+- Build Tools/Scripts: .eight[setup.py], .eight[Makefile]
+- Documentation: .eight[README.md], .eight[docs/], wiki
+- Tests: .eight[test/], .eight[*-test.py]
+
+---
+name: python
+
+# Python Project Files
+
+Read [Structuring Your Project](https://docs.python-guide.org/writing/structure/) in The Hitchhiker's Guide to Python
+
+---
+
+# Working With Virtual Environments
+
+Read [Python Virtual Environments: A Primer](https://realpython.com/python-virtual-environments-a-primer/) and follow along with the code samples.
+
+.eleven[Make sure you *only* follow the code for Python VERSION 3!!!]
+
+Stop when you get to the section titled *Managing Virtual Environments With virtualenvwrapper*.
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
