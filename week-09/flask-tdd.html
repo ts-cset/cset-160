@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 08: Flask TDD</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[08]
+
+# Flask TDD
+
+---
+
+# Agenda
+
+1. [ ] [TDD Basics](#basics)
+2. [ ] [Review Flaskr Tests](#flaskr)
+3. [ ] [Build From the Ground Up](#build)
+4. [ ] [Lab](#lab)
+
+---
+name: basics
+
+# TDD Basics
+
+1. Write a test
+2. Run tests: it should .eleven[fail]
+3. Write the code
+4. Run tests: it should .fourteen[pass]
+5. Refactor and repeat
+
+---
+
+# TDD Basics
+
+This description is oversimplified and doesn't really help.
+
+---
+
+# Test Practice
+
+Install .eight[pytest] globally, not in a virtual environment:
+
+```bash
+$ pip3 install pytest
+```
+
+Now make a new directory called .fourteen[test-practice] and move into it.
+
+---
+
+# Test Practice
+
+Follow along with the demo:
+
+- test_hello()
+  - returns "Hello World"
+  - returns "Hello " and a name
+- test_add()
+  - returns sum of two numbers
+  - returns sum of three numbers
+  - raises error when adding string
+  - doesn't raise error if string could be number
+
+---
+
+# Test Practice
+
+1. Find a partner.
+2. You write a simple test that will definitely break.
+3. Your partner writes _just enough_ code to make it pass.
+4. Then switch places. Keep going until you have a good function.
+
+---
+name: flaskr
+class: center
+
+# Review Flaskr Tests
+
+[The most important page in the tutorial.](http://flask.pocoo.org/docs/1.0/tutorial/tests/)
+
+---
+name: build
+
+# Build a Flask App From the Ground Up
+
+---
+name: lab
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
