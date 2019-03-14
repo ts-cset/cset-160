@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lecture 09: Web Servers</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+## Lecture .eight[09]
+
+# Web Servers
+
+---
+
+# Agenda
+
+1. [ ] [Web Servers](#servers)
+2. [ ] [Basic HTTP](#http)
+3. [ ] [Status Codes](#status-codes)
+4. [ ] [Flask Boilerplate](#boilerplate)
+
+---
+name: servers
+
+# Web Servers
+
+Confusing term used for both the .eight[hardware] or the .eight[software]
+
+- As .eight[hardware], it means a computer that runs web server software along with hosting the files for a site. It must be configured to allow connections from other devices.
+- As .eight[software], it means a program that communicates in HTTP allowing users to request a URL and respond with a file.
+
+---
+
+# Web Servers
+
+Can be .eight[static] or .eight[dynamic]
+
+- .eight[Static] servers send the requested file "as-is"
+- .eight[Dynamic] servers use extra software, usually an application and/or a database, to translate the request and compute a response.
+
+Most dynamic servers can also handle requests for static files, like stylesheets or images.
+
+---
+class: center, middle
+
+<img alt="diagram of dynamic server" src="https://www.fullstackpython.com/img/visuals/web-browser-server-wsgi.png" width="90%"/>
+
+---
+
+# Common Web Servers
+
+As of February 2019:
+
+1. Apache: 44.3%
+2. nginx: 41.0%
+3. IIS: 8.9%
+4. LiteSpeed: 3.9%
+5. GWS: 0.9%
+
+Others are used on less than 1% of all websites.
+
+---
+name: http
+
+# Basic HTTP
+
+Imagine you request .eight[http://www.example.com/path/file.html] in your browser. The browser translates that to the following HTTP request:
+
+```http
+GET /path/file.html HTTP/1.1
+Host: www.example.com
+```
+
+The web server running on .eight[www.example.com] will match that to a file on the machine, something like:
+
+```md
+/home/www/path/file.html
+```
+
+---
+
+# HTTP Request
+
+Composed of:
+
+- Request line: method, path to resource, version
+- Header fields: host (required), language, cookies, etc.
+- An empty line
+- An optional message body
+
+Sent as plain-text ASCII.
+
+---
+
+# HTTP Request Methods 
+
+The _verb_ used for the given Uniform Resource Locator
+
+- .eight[GET]: retrieve resource
+- .eight[HEAD]: retrieve resource's headers (i.e. meta-data)
+- .eleven[POST]: accept data for new resource
+- .eleven[PUT]: accept data to update existing resource
+- .eleven[PATCH]: accept partial data to update existing resource
+
+---
+
+# HTTP Request Methods 
+
+- .eleven[DELETE]: delete existing resource
+- .eight[OPTIONS]: check for allowed methods of a URL
+- Others are rarely used, like TRACE and CONNECT
+
+By convention, .eight[Safe Methods] shouldn't change anything on the server while the .eleven[other methods] are intended to cause a side effect.
+
+---
+
+# HTTP Response
+
+Composed of:
+
+- Status line: status code and message
+- Header fields: content-type, content-security-policy, etc.
+- An empty line
+- An optional message body
+
+---
+name: status-codes
+
+# Status Codes
+
+Three digit code to describe how the request was handled by the server. They are grouped by the first digit:
+
+- .eight[1XX] codes are Informational
+- .eight[2XX] codes are Successful
+- .eight[3XX] codes are Redirections
+- .eight[4XX] codes are an error from the Client
+- .eight[5XX] codes are an error from the Server
+
+
+---
+class: center, middle
+
+# [Status Codes and Cats!](https://http.cat/)
+
+---
+
+# Study Your HTTP
+
+- [What does a Method do?](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
+- [Will the Request/Response have a body?](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Summary_table)
+- [What does a Status Code really mean?](https://httpstatuses.com/)
+
+---
+name: boilerplate
+
+# Flask Boilerplate
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
