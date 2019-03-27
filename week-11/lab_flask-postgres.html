@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab 07: Flask &amp; PostgreSQL</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="../assets/slides.css" />
+
+  <style type="text/css" media="screen">
+    code {
+      color: var(--nord8);
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Lab 07: Flask &amp; PostgreSQL
+  </h1>
+
+  <hr>
+
+  <p>
+    In the Flaskr app, you leveraged Python and Flask's built-in support for SQLite. But we spent the first half of the year learning about PostgreSQL, so let's figure out a way to connect it to our flask-todo project.
+  </p>
+
+  <p>
+    You're going to use a tool called an <em>adapter</em>, a library written in your coding language that allows you to send SQL queries a running DBMS. In this case, you'll use <a href="http://initd.org/psycopg/" target="_blank">psycopg</a>.
+  </p>
+
+  <hr>
+
+  <h2>
+    Requirements
+  </h2>
+
+  <p>
+    By the end of class, you should have a functioning web app that does the following:
+  </p>
+
+  <ul>
+    <li>Shows a list of to-do items that have been stored in a database. Each item should have the following data:
+      <ul>
+        <li>It's text content</li>
+        <li>When it was created</li>
+        <li>If it's complete or not</li>
+      </ul>
+    </li>
+    <li>Uses a form to add new items to the above list. It should <strong>only</strong> ask for the text content of the new item.</li>
+    <li>Can update existing items mark them as completed.</li>
+  </ul>
+
+  <hr>
+
+  <h2>
+    Things to Think About
+  </h2>
+
+  <ul>
+    <li>Use the example flaskr tutorial app to see where the database functionality will need to go. The code will not be the same since we aren't using SQLite, but the concepts still apply.</li>
+    <li>If it is hard to think about the three pieces of this app all at once (the flask portion, the database portion, and the items themselves), it might be a good idea to break things out into modules. You can even use OOP principles to package up parts of your app.</li>
+    <li>If you have to do a lot of manual setup for your database connection, remember that your fellow developers will have to follow those instructions. A better idea is to rely on code. Look at how the flaskr tutorial app handles the database setup using code and simple commands, rather than a long list of instructions to follow in pgAdmin.</li>
+  </ul>
+</body>
+</html>
