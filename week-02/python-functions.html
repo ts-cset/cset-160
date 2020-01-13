@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lecture 03: Python Functions</title>
+    <title>Python Functions</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../assets/slides.css" />
@@ -17,26 +17,23 @@ class: middle
 ---
 class: middle
 
-## Lecture .eight[03]
-
 # Python Functions
 
 ---
 
 # Agenda
 
-1. [ ] Review Yesterday's Exercises
-2. [ ] Making Functions
-3. [ ] Calling Functions
-4. [ ] More About Files
-5. [ ] Returning Values
+1. [ ] Making Functions
+2. [ ] Calling Functions
+3. [ ] More About Files
+4. [ ] Returning Values
 
 ---
 
 #  Hurray, Functions!
 
 - Python functions:
-  - name pieces of code just like variables name values
+  - named pieces of code just like variables name values
   - take arguments, just like argv
   - are mini-scripts within scripts!
 
@@ -46,7 +43,7 @@ class: middle
 
 - use the keyword .eight[def] to define a function
 - .eight[*args] (asterisk args) is like .eight[argv] for functions
-- end the function definition with a semicolon, .eight[:]
+- end the function definition with a colon, .eight[:]
 - .eleven[the function body MUST be indented!]
 
 ---
@@ -63,7 +60,7 @@ class: middle
 # Function Checklist: (cont.)
 
 - Are all of your arguments unique?
-- Did you close the parenthesis and end with a semicolon?
+- Did you close the parenthesis and end with a colon?
 - Did you indent the body of your function?
 - Did you "end" your function by returning to the original indent level?
 
@@ -99,7 +96,7 @@ JavaScript. Try to see if there are any differences.
 # [Exercise 18](https://github.com/ts-cset/cset-160/blob/master/python/ex18.py)
 
 - Trace how .eight[current_line] is changing throughout the file and how it becomes .eight[line_count].
-- Run this in your terminal and try to understand what it's doing in the script:
+- If you don't remember `seek`, use `pydoc` to understand what it's doing in the script:
 ```sh
 $ pydoc file.seek
 ```
