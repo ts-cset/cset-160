@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lecture 05: Python Loops</title>
+    <title>Python Loops</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../assets/slides.css" />
@@ -17,56 +17,57 @@ class: middle
 ---
 class: middle
 
-## Lecture .eight[05]
-
 # Python Loops
 
 ---
 
 # Agenda
 
-1. [ ] Lists
-2. [ ] For-Loops
-3. [ ] While-Loops
-4. [ ] Loop Practice
-5. [ ] Lab
+1. [ ] [Lists](#lists)
+2. [ ] [For Loops](#for-loop)
+3. [ ] [While Loops](#while-loop)
+4. [ ] [List Methods](#list-methods)
+5. [ ] [Loop Practice](#loop-practice)
 
 ---
+name: lists
 
 # [Exercise 27](https://github.com/ts-cset/cset-160/blob/master/python/ex27.py)
 
 - Lists! Our first data structure!
 - Python Lists are very similar to JavaScript Arrays.
 - Python has other data structures, too. We'll get to them later.
-- If you're curious, look up the classical Computer Science definitions of Lists and Arrays on Wikipedia.
+- If you're curious, look up the classical Computer Science definitions of <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" target="_blank">Lists</a> and <a href="https://en.wikipedia.org/wiki/Array_data_type" target="_blank">Arrays</a> on Wikipedia.
     - Is there a difference?
     - Why do Python and JS use different names?
 
 ---
+name: for-loops
 
 # Exercise 27
 
 - Look up the .eight[range] function and learn what it does.
-- Could we remove the for-loop on line 23 and just assign .eight[range(0,6)] to .eight[elements]?
+- Could we remove the for loop on line 23 and just assign .eight[range(0,6)] to .eight[elements]?
 - What other List methods can you use beside .eight[append()]?
 
 ---
+name: while-loops
 
 # [Exercise 28](https://github.com/ts-cset/cset-160/blob/master/python/ex28.py)
 
 - Now we've seen both types of loops in Python.
 - They're used the same as in JavaScript, so they should feel familiar.
-- Is it usually better to use while-loops or for-loops?
+- Is it usually better to use while loops or for loops?
 
-.eleven[You can always stop your script from running by hitting CTRL-C]
+.eleven[Remember: You can always stop your script from running by hitting CTRL-C]
 
 ---
 
 # Exercise 28
 
-- Convert the while-loop to a function you can call and replace .eight[6] with a variable so this script can append whatever numbers you call it with.
+- Wrap the while loop in a function you can call and convert the .eight[6] into an argument so this script can create lists of different sizes.
 - Now add a second argument to the function that changes how every iteration increments on line 12.
-- Finally, replace the while-loop with a for-loop and range. Do you need the line that increments .eight[i]?
+- Finally, replace the while loop with a for loop and range. Do you need the line that increments .eight[i]?
 
 ---
 
@@ -81,6 +82,7 @@ my_list[0]
 Just like JavaScript, you need to use an integer as the index.
 
 ---
+name: list-methods
 
 # Accessing Methods
 
@@ -132,9 +134,7 @@ Open the REPL and type this:
 Remember this when you run into the following error:
 
 ```python
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-TypeError: test() takes 1 positional argument but 2 were given
+TypeError: some_method() takes 1 positional argument but 2 were given
 ```
 
 ---
@@ -144,9 +144,10 @@ TypeError: test() takes 1 positional argument but 2 were given
 - We can access items a little differently from JS
 - Figure out what .eight[split] and .eight[join] do.
 - The odd looking .eight[3:5] notation is a "slice" from a list. Look it up.
-- Rewrite this script using a for-loop. Which is easier? Which is simpler?
+- Rewrite this script using a for loop. Which is easier? Which is simpler?
 
 ---
+name: loop-practice
 
 # More Practice With Loops
 
