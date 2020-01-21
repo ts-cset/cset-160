@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lecture 06: Object Oriented Programming</title>
+    <title>Object Oriented Programming</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../assets/slides.css" />
@@ -16,8 +16,6 @@ class: middle
 
 ---
 class: middle
-
-## Lecture .eight[06]
 
 # Object Oriented Programming
 
@@ -75,7 +73,7 @@ Traceback (most recent call last):
 - Keys must be unique
 - Dicts are not ordered like Lists are
 
-Terms in other languages: hash, map, associative array
+Terms in other languages: [associative arrays](https://en.wikipedia.org/wiki/Associative_array), maps, hashes
 
 ---
 
@@ -150,12 +148,13 @@ mystuff.apple()
 Kind of like a Dictionary:
 
 ```python
-mystuff['apple'] # get apple from dict
-mystuff.apple() # get apple from module
-mystuff.orange # same thing, but just a variable
+my_dict['apple'] # get value from dict
+
+my_stuff.orange # get value from module
+my_stuff.apple() # get and call method from module
 ```
 
-Common pattern, .eight[Get X from Y], but using a different syntax.
+Common pattern for compound values, .eight[Get X from Y], but using a different syntax.
 
 ---
 name: classes
@@ -256,7 +255,6 @@ name: jargon
 
 - **class**: blueprint to make a new thing
 - **object**: the most basic thing; an instance of a class
-- **instance**: a single occurence of a class
 - **self**: variable for the instance, used within the instance
 - **method**: a function owned by a class
 - **attribute**: a variable owned by a class
@@ -274,27 +272,45 @@ name: jargon
 
 # Speaking Object-Oriented
 
-**class X(Y)**
-"Make a class named X that is-a Y"
+```python
+class Foo(Bar)
+```
 
-**class X(object): def __init__(self, J)** 
-"Class X has-a __init__ that takes self and J parameters"
+"Make a class named .eight[Foo] that is-a .eight[Bar]"
 
-**class X(object): def M(self, J)**
-"Class X has-a function named M that takes self and J parameters"
+```python
+class Foo(object): def __init__(self, bar)
+```
+
+"Class .eight[Foo] has-a constructor that takes parameters .eight[self], .eight[bar]"
+
+```python
+class Foo(object): def bar(self, baz)
+```
+
+"Class .eight[Foo] has-a .eight[bar] method that takes parameters .eight[self], .eight[baz]"
 
 ---
 
 # Speaking Object-Oriented
 
-**foo = X()**
-"Set foo to an instance of class X"
+```python
+foo = Bar()
+```
 
-**foo.M(J)**
-"From foo, get the M function, and call it with parameters self, J"
+"Create an instance of the .eight[Bar] class and assign it to .eight[foo]"
 
-**foo.K = Q**
-"From foo, get the K attribute, and set it to Q"
+```python
+foo.bar(baz)
+```
+
+"From .eight[foo], get the .eight[bar] method and call it with parameters .eight[self], .eight[baz]"
+
+```python
+foo.bar = 'baz'
+```
+
+"From .eight[foo], get the .eight[bar] attribute and set it to '.eight[baz]'"
 
 ---
 
@@ -312,13 +328,12 @@ Drill the phrases from english to code:
 $ python3 oop_test.py english
 ```
 
----
+???
 
 # Zen Koan
 
 # .eight[What is the difference between a fish and a koi?]
 
----
 
 # [Exercise 33](https://github.com/ts-cset/cset-160/blob/master/python/ex33.py)
 

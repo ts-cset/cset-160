@@ -11,15 +11,15 @@ PHRASES = {
     "class %%%(%%%):":
         "Make a class named %%% that is-a %%%",
     "class %%%(object):\n\tdef __init__(self, ***)":
-        "Class %%% has-a __init__ that takes self and *** parameters",
+        "Class %%% has-a constructor that takes parameters self, ***",
     "class %%%(object):\n\tdef ***(self, @@@)":
-        "Class %%% has-a function named *** that takes self and @@@ parameters",
+        "Class %%% has-a *** method that takes parameters self, @@@",
     "*** = %%%()":
-        "Set *** to an instance of class %%%",
+        "Create an instance of the %%% class and assign it to ***",
     "***.***(@@@)":
-        "From ***, get the *** function, and call it with parameters self, @@@",
+        "From ***, get the *** method and call it with parameters self, @@@",
     "***.*** = '***'":
-        "From ***, get the *** attribute, and set it to '***'"
+        "From ***, get the *** attribute and set it to '***'"
 }
 
 # drill phrases first?
