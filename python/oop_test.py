@@ -77,7 +77,7 @@ try:
 
             print(question)
 
-            response = input("> ")
+            response = input(">  ")
 
             answer = " ".join(answer.split("\n\t"))
 

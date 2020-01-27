@@ -1,4 +1,4 @@
-# Exercise 32.py
+# Exercise 32
 
 class Song(object):
     def __init__(self, lyrics):
