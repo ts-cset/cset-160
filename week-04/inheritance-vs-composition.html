@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inheritance vs Composition</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+# Inheritance vs Composition
+
+---
+
+# Agenda
+
+1. [ ] [Implicit Inheritance](#implicit)
+2. [ ] [Override Inheritance](#override)
+3. [ ] [Alter Inheritance](#alter)
+4. [ ] [Composition](#composition)
+
+---
+class: middle
+
+First,
+
+# .eleven[Inheritance is Dangerous]
+
+---
+
+# Inheritance
+
+.eight[Inheritance gives features and functionality from a generic class to a more specialized one.]
+
+- Keeps code DRY
+- Modify or add to specialized class as needed
+
+---
+
+# Inheritance
+
+A .eight[sub class] inherits from a .eight[super] or .eight[base class].
+
+Or .eight[child] and .eight[parent] classes.
+
+---
+
+# Three Kinds of Inheritance
+
+Actions on the child
+1. **imply** an action on the parent.
+2. **override** an action on the parent.
+3. **alter** an action on the parent.
+
+---
+name: implicit
+
+# [Exercise 44A](https://github.com/ts-cset/cset-160/blob/master/python/ex44a.py)
+
+- The .eight[pass] keyword allows you to create an empty block of code
+- The sub class has no definition, but all the functionality
+
+---
+name: override
+
+# [Exercise 44B](https://github.com/ts-cset/cset-160/blob/master/python/ex44b.py)
+
+- Both classes have the same method, which gets called?
+- Useful if you need the same interface, but different functionality
+
+---
+name: alter
+
+# [Exercise 44C](https://github.com/ts-cset/cset-160/blob/master/python/ex44c.py)
+
+- Again, both classes have the same interface
+- Alter before or after the parent method
+
+---
+
+# [Exercise 44D](https://github.com/ts-cset/cset-160/blob/master/python/ex44d.py)
+
+Shows all three kinds together in the same classes
+
+.eleven[Before you run it, try to guess what the printed output will be!]
+
+---
+
+# Why .eight[super()]?
+
+```
+super(Child, self).method()
+```
+
+Go find the .eight[.method()] definition on any of the classes .eight[Child] inherits from and call it with .eight[self].
+
+---
+name: composition
+
+# Composition
+
+Instead of mapping a special class to a generic class, just **use** two different classes.
+
+---
+
+# [Exercise 44E](https://github.com/ts-cset/cset-160/blob/master/python/ex44e.py)
+
+- In the last exercise, Child .eight[is-a] Parent
+- Now, Compound .eight[has-a] Other
+
+---
+
+# Which should you use?
+
+1. Avoid multiple inheritance at all costs!
+2. Use composition to package together unrelated things.
+3. Use inheritance *only* when there's a clear relationship within a single concept.
+
+---
+
+# Which should you use?
+
+But as always,
+
+## .fourteen[Don't be a slave to the rules]
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
