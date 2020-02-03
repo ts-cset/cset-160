@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Structure</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+# Project Structure
+
+---
+
+# Agenda
+
+1. [ ] [What We Don't Know](#dont-know)
+2. [ ] [Applications on GitHub](#github)
+3. [ ] [Generic Projects](#generic)
+4. [ ] [Python Projects](#python)
+5. [ ] [Virtual Environments](#venv)
+
+---
+name: dont-know
+
+# Python Basics in 4 Weeks
+
+- Data Types
+- Control Flow
+- Inputs and Outputs
+- Object Oriented Programming
+
+---
+
+# What We Don't Know
+
+- Sets and Tuples
+- More Number Types/Operations
+- Iterators
+- Generators and Decorators
+- Exception Handling and the Context Manager
+
+---
+
+# Started From The Bottom
+
+- REPL: for quick code
+- Script: for longevity
+- Module: for simplicity
+
+---
+count: false
+
+# Started From The Bottom
+
+- REPL: for quick code
+- Script: for longevity
+- Module: for simplicity
+- Package: for more simplicity
+
+---
+
+# Python Packages
+
+A collection of modules
+
+[Python Docs: Modules and Packages](https://docs.python.org/3/tutorial/modules.html)
+
+---
+
+# Application Programming
+
+An application is software designed for end users to help them perform an activity.
+
+- As simple as a script
+- As complex as packages of packages
+
+---
+
+name: github
+
+# Find Applications on GitHub
+
+1. Go to [github.com/explore]()
+2. Click on .fourteen[Topics] in the menu
+3. Scroll through the list to find .fourteen[Python]
+4. These repos are _related_ to Python, but we only want to see repos _written_ in Python, so select it from the .fourteen[Language] dropdown
+5. Then .fourteen[Sort] by .fourteen[Most stars]
+
+Open a few **application** repos.
+
+---
+
+# Find Applications on GitHub
+
+Now make a list of common file and directory names. Don't go too deep into directories, just skim through the top level or two.
+
+We've done this before in CSET-105.
+
+.fourteen[Can you find files or conventions only used for Python projects?]
+
+---
+name: generic
+
+# Generic Project Files
+
+- Repo Information: .eight[README.md], .eight[LICENSE]
+- Version Control: .eight[.git/], .eight[.gitignore]
+- Package Manager: .eight[requirements.txt], .eight[package.json]
+  - Dependencies = packages to make the project run
+  - Dev Dependencies = packages to work on the project
+- Environment Info: .eight[venv/], .eight[.editorconfig]
+- Continuous Integration: .eight[.travis.yml], .eight[.circleci]
+- Build Tools/Scripts: .eight[setup.py], .eight[Makefile]
+- Documentation: .eight[README.md], .eight[docs/], wiki
+- Tests: .eight[test/], .eight[*-test.py]
+
+---
+name: python
+
+# A Python Project
+
+```md
+project-name/
+  - projectname/
+    - __init__.py
+    - module.py
+    - other_module.py
+  - bin/
+  - docs/
+  - tests/
+  - venv/
+  - requirements.txt
+  - setup.py
+```
+
+---
+
+# A Python Project
+
+- .eight[projectname]: The application code
+- .eight[bin/]: Related scripts
+- .eight[docs/]: Text or web files
+- .eight[tests/]: Code to test the application code
+- .eight[venv/]: The virtual environment
+
+---
+name: venv
+
+# Virtual Environment?
+
+Time to read the docs!
+
+[Virtual Environments and Packages](https://docs.python.org/3/tutorial/venv.html)
+
+---
+
+# Installing Packages?
+
+- Use pip!
+- It stands for PIP Installs Packages
+
+[Installing Python Modules](https://docs.python.org/3/installing/index.html)
+
+---
+
+# More on Project Structure
+
+Read [Structuring Your Project](https://docs.python-guide.org/writing/structure/) in The Hitchhiker's Guide to Python
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
