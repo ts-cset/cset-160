@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Virtual Environments</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+# Virtual Environments
+
+---
+
+# Agenda
+
+1. [ ] [Using venv](#venv)
+2. [ ] [Practice venv](#practice-venv)
+3. [ ] [Using pip](#pip)
+4. [ ] [Practice pip](#practice-pip)
+
+---
+name: venv
+
+# Using venv
+
+```bash
+$ python3 -m venv &lt;dir&gt;
+```
+
+Where `&lt;dir&gt;` is the name of the virtual environment.
+
+- This adds a directory called `&lt;dir&gt;` in the current working directory 
+- It will hold Python executables and installed packages
+- Your bash $PATH will get updated to look here first to run commands
+
+---
+
+# Using venv
+
+- You only have to create a virtual environment once for each project.
+- You can turn it on and off whenever you need to with scripts created within the new environment:
+
+```bash
+$ source &lt;dir&gt;/bin/activate
+$ deactivate
+```
+
+"Activating" your environment is nothing more than a temporary change to the $PATH variable.
+
+---
+
+# Why venv?
+
+- It's built in
+- It's simple
+- Someday we might switch to [Pipenv](https://docs.python-guide.org/dev/virtualenvs/) (it also works on Windows)
+- We used to use virtualenv, but that's old school now
+
+Related tools: virtualenvwrapper, virtualenv-burrito, pyenv, direnv
+
+---
+name: practice-venv
+
+# Practice venv
+
+Go to your home directory, or wherever you keep your projects, and make a new project folder.
+
+```bash
+$ mkdir venv-practice
+$ cd venv-practice
+```
+
+---
+
+# Practice venv
+
+Create the virtual environment inside your project.
+
+```bash
+$ python3 -m venv venv
+$ ls
+venv
+```
+You should see the new directory.
+
+---
+
+# Practice venv
+
+First, verify where your system python is and check its version. Then activate the virtual environment.
+
+```bash
+$ which python
+/usr/bin/python
+$ python --version
+Python 2.7.10
+$ source venv/bin/activate
+```
+
+---
+
+# Practice venv
+
+If it worked, you should see a change to your bash prompt: .eight[(venv)]. You should also see a new path to the virtual environment's version of python.
+
+```bash
+(venv) $ which python
+~/venv-practice/venv/bin/python
+(venv) $ python --version
+Python 3.7.6
+```
+
+---
+
+# Practice venv
+
+To stop working on this virtual environment, run the deactivate command. Now you're back to your system python path and version.
+
+```bash
+(venv) $ deactivate
+$ which python
+/usr/bin/python
+$ python --version
+Python 2.7.10
+```
+
+To activate it again, run the source command two slides back. Then deactivate it once more.
+
+---
+
+# Practice venv
+
+Now delete this project directory, go [back to the beginning step](#practice-venv), and do it all over again.
+
+```bash
+$ cd ..
+$ rm -rf venv-practice
+```
+
+Keep practicing until you can do it a few times in a row without looking at commands or making any mistakes.
+
+---
+name: pip
+
+# Using pip
+
+- pip is for python
+- pip3 is for python3
+
+```bash
+$ pip3 --version
+pip 20.0.2 from ...
+```
+
+When used outside of a virtual environment, it installs .eleven[global] packages for the system python.
+
+---
+
+# Using pip
+
+To prevent this, open your .eight[~/.bashrc] file and append this line:
+
+```
+export PIP_REQUIRE_VIRTUALENV=true
+```
+
+Save it, then open your terminal and run this command to apply it:
+
+```bash
+$ source ~/.bashrc
+```
+
+---
+
+# Using pip
+
+List installed packages
+
+```bash
+$ pip3 list
+Package    Version
+---------- -------
+pip        20.0.2 
+setuptools 42.0.2 
+wheel      0.33.6 
+```
+
+These should be your only global packages. You'll put the rest in a virtual environment.
+
+---
+
+# Using pip
+
+To install a package from the [Python Package Index](https://packaging.python.org/glossary/#term-python-package-index-pypi):
+
+```bash
+(venv) $ pip3 install package_name
+```
+
+.eleven[Make sure you are in an activated virtual environment for the proper project!]
+
+Running `pip3 list` in a virtual environment shows what is installed for that project.
+
+---
+
+# Using pip
+
+You can install many packages at once, or specify versions.
+
+```bash
+$ pip3 install one two
+$ pip3 install red==1.0.6
+$ pip3 install blue&gt;=2.1.0
+```
+
+---
+
+# Using pip
+
+You can uninstall, search for, and see details on packages with these commands:
+
+```bash
+$ pip3 uninstall package_name
+$ pip3 search "query"  
+$ pip3 show package_name
+```
+
+---
+
+# Using pip
+
+Most importantly, you can save the list of packages in a file and track it with git. Then others can use the file to install all the dependencies at once.
+
+```bash
+$ pip3 freeze &gt; requirements.txt
+$ pip3 install -r requirements.txt
+```
+
+---
+name: practice-pip
+
+# Practice pip
+
+Go to your home directory, or wherever you keep your projects, and make a new project folder.
+
+```bash
+$ mkdir pip-practice
+$ cd pip-practice
+```
+
+Then create a new virtual environment and activate it.
+
+---
+
+# Practice pip
+
+With your virtual environment active, install a third-party package.
+
+```bash
+$ pip install requests
+```
+
+---
+
+# Practice pip
+
+Create a script called .eight[get_ip.py] and add the following code.
+
+```python
+import requests
+
+response = requests.get('https://httpbin.org/ip')
+data = response.json()
+
+print(f"Your IP is {data['origin']}")
+```
+
+---
+
+# Practice pip
+
+Run the script and see your IP address. If it worked, then use pip to save your project's dependency.
+
+```bash
+$ python get_ip.py
+Your IP is 8.8.8.8
+$ pip freeze &gt; requirements.txt
+$ ls
+get_ip.py     requirements.txt     venv
+```
+
+---
+
+# Practice pip
+
+Now deactivate your virtual environment and run your script again. You should get an error because now you're using your system python, not your project's local environment.
+
+```bash
+$ deactivate
+$ python get_ip.py
+...
+ImportError: no module named requests
+```
+
+---
+
+# Practice pip
+
+To pretend like you are a new developer to an existing project, delete your virtual environment directory and then make a new one. Install all the dependencies at once from your file.
+
+```bash
+$ rm -rf venv
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+```
+
+---
+
+# Practice pip
+
+The script should run again!
+
+Deactivate the venv, delete this project directory, go [back to the beginning step](#practice-pip), and do it all over again.
+
+```bash
+$ deactivate
+$ cd ..
+$ rm -rf pip-practice
+```
+
+Keep practicing until you can do it a few times in a row without looking at commands or making any mistakes.
+
+---
+
+# Source Control
+
+In these exercises, we added a few directories and files to your project:
+
+- venv/
+- requirements.txt
+
+.fourteen[Which should we track using version control?]
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
