@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice The Process</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+# Practice The Process
+
+---
+
+# Agenda
+
+1. [ ] [What Process?](#process)
+2. [ ] [Command Line Arguments](#args)
+3. [ ] [Make cat](#cat)
+4. [ ] [Make find](#find)
+
+---
+name: process
+
+# What Process?
+
+What you should do when you don't know how to write a piece of code.
+
+---
+
+# Process
+
+1. Write in plain english what the code needs to do either as a paragraph or, even better, a list of tasks.
+2. Convert this into a list of comments in the file.
+3. Under a comment, write a line of code that accomplishes that task.
+4. If the comment is too abstract, break it into smaller chunks until there is a line you know you can code.
+5. Run the code to check for errors. Use .eight[print] to see if it worked. Go back to step 3 and repeat until you're done.
+
+---
+
+# What Practice?
+
+We're going to do two exercises to implement programs we already know how to use. Why?
+
+- Review the process on our own.
+- Become comfortable with deadlines.
+
+---
+count: false
+
+# What Practice?
+
+We're going to do two exercises to implement programs we already know how to use. Why?
+
+- Review the process on our own.
+- Become comfortable with deadlines.
+- Get familiar with command line arguments.
+- Review working with files.
+
+---
+name: args
+
+# Command Line Args
+
+.fourteen[Go review Exercises 11 through 15.]
+
+- What does .eight[sys.argv] do again?
+- What is annoying about it?
+- How do we get the contents of a file?
+- How do we write new contents to a file?
+
+---
+
+# Command Line Args
+
+Check out the [argparse module](https://docs.python.org/3/howto/argparse.html)
+
+- Create a parser object from the .eight[ArgumentParser] class
+- Use that object to set up rules for positional and optional arguments
+- Call a method to get the arguments given by the user
+- Create help text automatically from rules
+- Print usage errors
+
+---
+name: cat
+
+# Make cat
+
+Concatenate and print out files.
+
+```sh
+$ cat somefile.txt
+$ cat A.txt B.txt C.txt
+$ cat A.txt B.txt &gt; D.txt
+```
+
+Read the man page to see what it can do and what other options there are.
+
+---
+
+# Make cat
+
+```sh
+$ python3 cat.py ...args
+```
+
+But here's the catch:
+
+.fourteen[You have 45 minutes to implement as much as you can.]
+
+---
+
+# Make cat
+
+So how did you do? Take a few minutes to think about what blocked you from doing more.
+
+---
+name: find
+
+# Make find
+
+Search through a directory and print file names that match the arguments.
+
+```sh
+$ find . -name "*.txt" -print
+```
+
+Read the man page for more details
+
+---
+
+# Make find
+
+Use the man page to create a plan of the options you plan on implementing. Some are easier than others.
+
+- .eight[-name] and .eight[-type] are essential
+- then try .eight[-print]
+- .eight[-exec] will be one of the harder ones, but doable!
+
+.fourteen[Again, you have 45 minutes.]
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
