@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab: Automated Testing</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="../assets/slides.css" />
+
+  <style type="text/css" media="screen">
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: calc(0.5rem + 1.75vw);
+      line-height: 1.4;
+      max-width: 1000px;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    p, ol, ul, pre, hr,
+    table, blockquote {
+      margin-bottom: 3rem;
+    }
+
+    li ol, li ul {
+      margin-bottom: 0;
+    }
+
+    ol, ul, pre, table, blockquote {
+      padding: 0 1rem;
+    }
+
+    code {
+      background: var(--nord6);
+      border: 1px solid var(--nord5);
+      color: var(--nord10);
+      padding: 0 0.5rem;
+    }
+
+    pre code {
+      display: block;
+      font-size: 80%;
+      padding: 2rem;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Lab: Automated Testing
+  </h1>
+
+  <hr>
+
+  <p>
+    In this lab, you'll practice your personal development practice while adding in a new element: <strong>unit tests</strong>. While working on your OOP Adventure Game, you probably wasted a lot of time playing through your game over and over just to see if some new code worked. You can speed this up by writing code to test small pieces of your game for you.
+  </p>
+
+  <p>
+    Because writing code can be hard, writing tests for your code can be even harder. To start out, I'll provide the tests and you'll have to write the code to make the tests pass. This lab has many parts, so take your time and try to understand what's happening before moving on.
+  </p>
+
+  <p>
+    Before you start, search around for some good articles to understand <strong>Test Driven Development</strong> and why we're using it. Also, see if you can find a definition for <strong>Unit Tests</strong> and see what other types of tests you can write.
+  </p>
+
+  <hr>
+
+  <h2>
+    Part I
+  </h2>
+
+  <p>
+    For a quick intro to testing, you'll build and test a class that could've been used for your OOP Adventure Game.
+  </p>
+
+  <h3>Setup:</h3>
+  
+  <ol>
+    <li>Copy the python-skeleton project to make a new one called <code>ex47</code>. Rename all the instances of <code>yourproject</code> to <code>ex47</code>. If you don't remember, <a href="https://github.com/ts-cset/python-skeleton" target="_blank">follow the instructions in the README</a>.</li>
+    <li>In your ex47 package, create a new module called <code>game.py</code> and <a href="https://github.com/ts-cset/cset-160/blob/master/python/ex47/game.py" target="_blank">add this code</a>.</li>
+    <li>Then create a new file in your <code>tests</code> directory called <code>test_game.py</code>. <a href="https://github.com/ts-cset/cset-160/blob/master/python/ex47/test_game.py" target="_blank">Here is the code for the tests</a>.</li>
+    <li>If you have activated a virtual environment and installed the dependencies with pip, run the tests with the <code>pytest</code> command. You should see something like the following output:</li>
+  </ol>
+  
+  <pre><code>=========== test session starts ============
+platform darwin -- Python 3.7.6, pytest-5...
+rootdir: /Users/zach/cset/labs/ex47
+collected 3 items
+
+tests/test_game.py <span class="fourteen">...</span>               <span class="fourteen">[100%]</span>
+
+<span class="fourteen">============ 3 passed in 0.04s =============</span></code></pre>
+
+  <p>
+    The test file imports the Room class in the game module so you can see if it works. The test file has three tests, which are functions, and each is checking a certain behavior. Read the code and the tests and try to understand what is happening.
+  </p>
+
+  <p>
+    Next, go <a href="https://docs.pytest.org/en/latest/" target="_blank">read Pytest's documentation</a> to see how it works and what else you can do with it. Read up on the <code>assert</code> statement, too. Here are some important notes:
+  </p>
+
+  <ul>
+    <li>Test files need to start with <code>test_</code> and should be named for the module they are testing. Make one for each module you write.</li>  
+    <li>They need to be placed in the <code>tests</code> directory or pytest won't find them.</li>
+    <li>Each test is a function that starts with <code>test_</code> and should be named for what the test is trying to check.</li>
+    <li class="eleven">If pytest shows "no tests ran" then you named something incorrectly or are not calling pytest from your project's root directory.</li>
+  </ul>
+  
+  <h3>Practice:</h3>
+
+  <p>
+    Try making this Room class more advanced. Make it do something new and see if you can write a test for it.
+  </p>
+
+  <hr>
+
+  <h2>
+    Part II
+  </h2>
+
+  <p>
+    Did you find it difficult playing someone else's OOP game? You probably had to type very specific commands to do something. Wouldn't it be nice if your game could figure out what the user wanted to do with all sorts of English sentences? Then input like "open door" or "go through the door" could do the same thing.
+  </p>
+
+  <p>
+    So let's build it! I'll give you a big list of words your game will know about, called a lexicon, and then you'll write a function to parse sentences entered by a user and turn it into useable commands. You might find the docs for <a href="https://docs.python.org/3.8/library/stdtypes.html#str.split" target="_blank">str.split()</a>, <a href="https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences" target="_blank">tuples</a>, and <a href="https://docs.python.org/3/tutorial/errors.html" target="_blank">exceptions</a> to be helpful for this exercise.
+  </p>
+
+  <p>
+    Your function should return a list of <code>(type, word)</code> tuples for each word in the input string. That way you know what type of word was entered. For words you don't know, we can return an error type. Here's the lexicon with each type:
+  </p>
+  
+  <ul>
+    <li><strong>direction</strong>: north, south, east, west, down, up, left, right, back</li>
+    <li><strong>verb</strong>: go, stop, kill, eat</li>
+    <li><strong>stop</strong>: the, in, of, from, at, it</li>
+    <li><strong>noun</strong>: door, bear, princess, cabinet</li>
+    <li><strong>number</strong>: any valid string of numbers</li>
+  </ul>
+
+
+  <h3>Setup:</h3>
+
+  <ol>
+    <li>Copy the project skeleton into a new project called <code>ex48</code>. Run the tests to make sure the skeleton was created properly.</li>
+    <li><a href="https://github.com/ts-cset/cset-160/blob/master/python/ex48/test_lexicon.py" target="_blank">Get the test file</a> and add it to the <code>ex48/tests/</code> directory.</li>
+    <li>I'll also give you a helper module that you can import and use to convert strings into numbers. <a href="https://github.com/ts-cset/cset-160/blob/master/python/ex48/convert.py" target="_blank">Get the module file</a> and add it to the <code>ex48/ex48/</code> package.</li>
+    <li>Finally, create a module called <code>lexicon.py</code> inside your package. <strong>You should only write your code within this file.</strong></li>
+  </ol>
+
+  <p>
+    Try running the tests. They should fail and that is good! A failing test is like a goal, a definition of successful code. The test file is mostly commented out so you'll have small steps to accomplish the goal. This is what you should do:
+  </p>
+
+  <ol>
+    <li>Uncomment the next small portion of tests.</li>
+    <li>Run the tests and see the failure.</li>
+    <li>Write the source code to make it pass. Don't forget your development process:
+      <ol>
+        <li>Write comments to describe the tasks you need to do.</li>
+        <li>Write the code to accomplish each task.</li>
+        <li>When stuck, break the comment into more lines but smaller tasks.</li>
+      </ol>
+    </li>
+    <li>Repeat until you're done.</li>
+  </ol>
+
+  <h3>Practice:</h3>
+
+  <ul>
+    <li>The tests only covers some of the words in the lexicon. Improve the tests to check for all the words it should know.</li>
+    <li>Add some new words of your own to the lexicon. What should your game allow users to do? Then update the tests.</li>
+    <li>Make sure your scanner can handle input in any capitalization. Write a new test function to prove it works.</li>
+  </ul>
+
+  <hr>
+
+  <h2>Part III</h2>
+
+  <p>
+    TODO
+  </p>
+</body>
+</html>
