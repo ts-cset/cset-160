@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTTP and Web Servers</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# .eight[CSET 160:]
+## .eight[Web Development II]
+
+---
+class: middle
+
+# HTTP and Web Servers
+
+---
+
+# Agenda
+
+1. [ ] [URLs](#urls)
+2. [ ] [Web Servers](#servers)
+3. [ ] [HTTP](#http)
+4. [ ] [Methods](#methods)
+5. [ ] [Status Codes](#status-codes)
+
+---
+name: urls
+
+# URLs
+
+Uniform Resource Locators
+
+```md
+http://example.com:80/path/file.html?key=val#heading
+```
+
+- Protocol
+- Domain
+- Port
+- File Path
+- Parameters
+- Anchor
+
+[MDN: What is a URL?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL)
+
+---
+
+# URLs
+
+Used in browser's navigation bar or within HTML tags:
+
+- links with `&lt;a&gt;`
+- documents with `&lt;link&gt;` and `&lt;script&gt;`
+- media with `&lt;img&gt;`, `&lt;video&gt;`, and `&lt;audio&gt;`
+- display other sites with `&lt;iframe&gt;`
+
+---
+count: false
+
+# URLs
+
+Used in browser's navigation bar or within HTML tags:
+
+- links with `&lt;a&gt;`
+- documents with `&lt;link&gt;` and `&lt;script&gt;`
+- media with `&lt;img&gt;`, `&lt;video&gt;`, and `&lt;audio&gt;`
+- display other sites with `&lt;iframe&gt;`
+- send data with `&lt;form&gt;`
+
+---
+
+name: servers
+
+# Web Servers
+
+Confusing term used for both the .eight[hardware] or the .eight[software]
+
+- As .eight[hardware], it means a computer that runs web server software and contains the files for a site. It must be configured to allow connections from other devices.
+- As .eight[software], it means a program that communicates in HTTP allowing users to request a file at a URL.
+
+From now on, we're just using the second definition.
+
+---
+class: center, middle
+
+<img src="https://mdn.mozillademos.org/files/13677/Fetching_a_page.png" alt="diagram of served files" width="90%"/>
+
+---
+
+# Web Servers
+
+Can be .eight[static] or .eight[dynamic]
+
+- .eight[Static] servers send the requested file "as-is"
+- .eight[Dynamic] servers use extra software, usually an application and/or a database, to translate the request and compute a response.
+
+Most dynamic servers can also handle requests for static files, like stylesheets or images.
+
+---
+class: center, middle
+
+<img alt="diagram of dynamic server" src="https://www.fullstackpython.com/img/visuals/web-browser-server-wsgi.png" width="90%"/>
+
+---
+
+# Common Web Servers
+
+As of February 2019:
+
+1. Apache: 44.3%
+2. nginx: 41.0%
+3. IIS: 8.9%
+4. LiteSpeed: 3.9%
+5. GWS: 0.9%
+
+Others are used on less than 1% of all websites.
+
+---
+name: http
+
+# HTTP
+
+.eight[HyperText Transfer Protocol]
+
+- Standard language to communicate between web servers and clients, like your browser
+- Clients send Request Messages
+- Servers reply with Response Messages
+
+Messages are usually sent in plain-text so we can read them.
+
+---
+
+# HTTP Request
+
+Composed of:
+
+- **Request line**: method, path to resource, version
+- **Header fields**: host (required), language, cookies, etc.
+- **An empty line**
+- **An optional message body**
+
+---
+
+# HTTP Response
+
+Composed of:
+
+- **Status line**: status code and message
+- **Header fields**: content-type, content-security-policy, etc.
+- **An empty line**
+- **An optional message body**
+
+---
+
+# HTTP Example
+
+You type .eight[http://www.example.com/path/file.html] in your browser's address bar and hit enter. The browser translates that to the following HTTP request:
+
+```http
+GET /path/file.html HTTP/1.1
+Host: www.example.com
+```
+
+---
+
+# HTTP Example
+
+The web server running on .eight[www.example.com] will match that to a file and create a response with some meta-data and the file as the message body:
+
+```http
+HTTP/1.1 200 OK
+Date: Mon, 23 May 2019 14:38:34 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 138
+
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;An Example Page&lt;/title&gt;
+...
+```
+
+---
+
+# View HTTP Messages
+
+- Open your browser's dev tools
+- Click on the .eight[Network] tab
+- Reload the page to capture the requests and responses
+- You'll see a timeline and list of all the requests
+- Click on the name of this page's document
+
+You can see details about the entire exchange.
+
+---
+name: methods
+
+# Request Methods 
+
+The _verb_ used for the given Uniform Resource Locator
+
+- .eight[GET]: retrieve resource
+- .eight[HEAD]: retrieve resource's headers (i.e. meta-data)
+- .eleven[POST]: accept data for new resource
+- .eleven[PUT]: accept data to update existing resource
+- .eleven[PATCH]: accept partial data to update existing resource
+
+---
+
+# Request Methods 
+
+- .eleven[DELETE]: delete existing resource
+- .eight[OPTIONS]: check for allowed methods of a URL
+- Others are rarely used, like TRACE and CONNECT
+
+By convention, .eight[Safe Methods] shouldn't change anything on the server while the .eleven[other methods] are intended to cause a side effect.
+
+[Wikipedia: HTTP Request Methods](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
+
+---
+
+# Request Methods
+
+HTML tags that use URLs to send Requests can use the following Methods:
+
+- **GET**: `&lt;a&gt;`, `&lt;link&gt;`, `&lt;script&gt;`, `&lt;img&gt;`, `&lt;video&gt;`, `&lt;audio&gt;`, `&lt;iframe&gt;`
+
+---
+count: false
+
+# Request Methods
+
+HTML tags that use URLs to send Requests can use the following Methods:
+
+- **GET**: `&lt;a&gt;`, `&lt;link&gt;`, `&lt;script&gt;`, `&lt;img&gt;`, `&lt;video&gt;`, `&lt;audio&gt;`, `&lt;iframe&gt;`, `&lt;form&gt;`
+- **POST**: `&lt;form&gt;`
+
+You can't use the other methods in HTML, you need JS for that!
+
+---
+name: status-codes
+
+# Status Codes
+
+Three digit code to describe how the request was handled by the server. They are grouped by the first digit:
+
+- .eight[1XX] codes are Informational
+- .eight[2XX] codes are Successful
+- .eight[3XX] codes are Redirections
+- .eight[4XX] codes are Client Errors
+- .eight[5XX] codes are Server Errors
+
+
+---
+class: center, middle
+
+# [Status Codes and Cats!](https://http.cat/)
+
+---
+count: false
+class: center, middle
+
+# [What Status Codes Really Mean](https://httpstatuses.com/)
+
+---
+
+# .fourteen[HTTP Practice]
+
+[MDN Guide: Sending Form Data](https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data)
+
+If you want more info on forms, [read the MDN overview on forms](https://developer.mozilla.org/en-US/docs/Learn/Forms). It's got more guides on building, styling, and validating forms.
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
