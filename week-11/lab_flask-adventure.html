@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab: Flask Adventure Game</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="../assets/slides.css" />
+
+  <style type="text/css" media="screen">
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: calc(0.5rem + 1.75vw);
+      line-height: 1.4;
+      max-width: 1000px;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    p, ol, ul, pre, hr,
+    table, blockquote {
+      margin-bottom: 3rem;
+    }
+
+    li ol, li ul {
+      margin-bottom: 0;
+    }
+
+    ol, ul, pre, table, blockquote {
+      padding: 0 2.5rem;
+    }
+
+    code {
+      background: var(--nord6);
+      border: 1px solid var(--nord5);
+      color: var(--nord10);
+      font-size: calc(0.35rem + 1.75vw);
+      padding: 0 0.5rem;
+    }
+
+    pre code {
+      display: block;
+      font-size: 80%;
+      padding: 2rem;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Lab: Flask Adventure Game
+  </h1>
+
+  <hr>
+
+  <p>
+    In this lab, you'll convert your OOP text-based adventure game into a web application. The goal will be to practice working with Flask to create a server capable of handling requests and building responses. You will also work on your Test-Driven Development process.
+  </p>
+
+  <p>
+    The initial setup will require you to sign up for <a href="https://signup.heroku.com/login" target="_blank">a free Heroku account</a>. Heroku is a Platform as a Service (PaaS) meaning it's a web service that helps you manage servers that can run your applications built in Python and other languages.
+  </p>
+
+  <p>
+    If you need help writing your own tests, please review the <a href="../week-06/lab_testing.html">Automated Testing lab</a> from a few weeks before. Also, re-read the <a href="https://flask.palletsprojects.com/en/1.1.x/tutorial/tests/" target="_blank">Flask Tutorial page on Test Coverage</a> to review using <code>pytest</code> and <code>coverage</code> for a Flask application. Finally, you should keep <a href="https://docs.pytest.org/en/latest/" target="_blank">Pytest's documentation</a> open as a reference.
+  </p>
+
+  <hr>
+
+  <h2>
+    Setup
+  </h2>
+
+  <ol>
+    <li>Copy the python-skeleton project and set up your game's project structure. If you don't remember, <a href="https://github.com/ts-cset/python-skeleton" target="_blank">follow the instructions in the README</a>.</li>
+    <li>Create your virtual environment, activate it, and install <code>flask</code> and <code>pytest</code>.</li>
+    <li>Once you have a basic Hello World app running and tested, you should commit and push to GitHub.</li>
+    <li>Then you can follow <a href="https://pybit.es/deploy-flask-heroku.html" target="_blank">this tutorial</a> to deploy this to Heroku.</li>
+  </ol>
+
+  <p>
+    <strong>Make sure that the project setup for a simple app is working before you start developing your game!</strong> Adding more code on to a broken setup is going to make debugging it that much harder. If you see the app running on a Heroku URL and can make quick changes to it, then you are good to go!
+  </p>
+
+  <hr>
+
+  <h2>
+    Requirements
+  </h2>
+
+  <ul>
+    <li>UI built with HTML/CSS served dynamically via Flask</li>
+    <li>Fully tested by Pytest</li>
+    <li>Followed a feature branch git workflow</li>
+    <li>Deployed automatically to Heroku on updates to master branch</li>
+  </ul>
+
+  <p>
+    Optional, but recommended:
+  </p>
+
+  <ul>
+    <li>Validated and sanitized user input</li>
+    <li>Created user stories to plan the project</li>
+    <li>Employed OOP classes for the game engine and scenes</li>
+    <li>Organized classes in separate Python modules using Flask Blueprints</li>
+    <li>Stored data in cookies and/or Postgres database to store user progress, save states, or preferences</li>
+  </ul>
+</body>
+</html>
